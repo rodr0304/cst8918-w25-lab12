@@ -1,0 +1,58 @@
+# macOS
+.DS_Store
+
+# Azure CLI
+.azure/
+
+# Shell / local files
+.bash_history
+.cache/
+.config/
+.local/
+.gitconfig
+.netrc
+.ssh/
+
+# IDEs
+.vscode/
+.idea/
+*.code-workspace
+
+# Terraform
+.terraform/
+**/.terraform/*
+.terraform.d/
+.terraformrc
+terraform.rc
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Terraform plans
+*.plan
+tfplan
+tfplan.*
+
+# Terraform variables - may contain secrets
+*.tfvars
+*.tfvars.json
+
+# Terraform override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Security tools
+.terrascan/
+.sentinel/
+
+# Other local credentials/config
+.boto
+.ansible/
