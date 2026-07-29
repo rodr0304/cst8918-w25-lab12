@@ -1,7 +1,7 @@
 {
   "name": "production-deploy",
   "issuer": "https://token.actions.githubusercontent.com",
-  "subject": "repo:rodr0304/cst8918-w25-lab12:environment:production",
+  "subject": "repo:rodr0304@255015195/cst8918-w25-lab12@1315587905:environment:production",
   "description": "CST8918 Lab12 - GitHub Actions",
   "audiences": [
     "api://AzureADTokenExchange"
