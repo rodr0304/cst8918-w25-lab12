@@ -1,18 +1,19 @@
-# CST8918 - Lab 12
-## Terraform CI/CD with Azure and GitHub Actions
+# CST8918 – Lab 12: Terraform CI/CD on Azure with GitHub Actions
 
-### Authors
+## Team Members
 
-- Diniz Rodrigues Martins
-- Akash Patel
+| Name | GitHub |
+|------|--------|
+| Diniz Rodrigues Martins | @rodr0304 |
+| Akash Patel | @Akash705-hub |
 
 ---
 
-## Project Overview
+## Overview
 
-This project demonstrates how to automate Terraform deployments to Microsoft Azure using GitHub Actions and OpenID Connect (OIDC).
+This project demonstrates the implementation of a complete CI/CD pipeline for Terraform on Microsoft Azure using GitHub Actions and OpenID Connect (OIDC).
 
-The infrastructure is managed as code with Terraform, while GitHub Actions is responsible for validating, planning, and deploying the infrastructure automatically.
+The project includes automated Terraform validation, integration testing, infrastructure deployment, and daily drift detection while using Azure Blob Storage as the remote Terraform backend.
 
 ---
 
@@ -21,9 +22,8 @@ The infrastructure is managed as code with Terraform, while GitHub Actions is re
 - Terraform
 - Microsoft Azure
 - GitHub Actions
-- Azure Entra ID (OIDC)
-- Azure Storage Account
-- Azure Resource Groups
+- Microsoft Entra ID (OIDC)
+- Azure Blob Storage
 
 ---
 
@@ -35,9 +35,10 @@ The infrastructure is managed as code with Terraform, while GitHub Actions is re
 │   └── workflows
 │       ├── infra-ci-cd.yml
 │       ├── infra-drift-detection.yml
-│       └── infra-static_tests.yml
+│       └── infra-static-tests.yml
 │
 ├── app
+│   └── .gitkeep
 │
 ├── docs
 │   ├── 1-github-settings.md
@@ -59,6 +60,7 @@ The infrastructure is managed as code with Terraform, while GitHub Actions is re
 │   │   └── pull-request.json
 │   │
 │   ├── tf-app
+│   │   ├── .tflint.hcl
 │   │   ├── backend.tf
 │   │   ├── main.tf
 │   │   ├── outputs.tf
@@ -68,60 +70,60 @@ The infrastructure is managed as code with Terraform, while GitHub Actions is re
 │   └── tf-backend
 │       └── main.tf
 │
+├── screenshots
+│   ├── pr-checks.png
+│   └── pr-tf-plan.png
+│
+├── .editorconfig
 ├── .gitignore
 └── README.md
 ```
 
 ---
 
-## Features
+## Implemented Features
 
-- Terraform remote backend
-- Azure Storage Account for state management
-- GitHub Actions CI/CD pipeline
+- Azure remote Terraform backend
+- Azure Blob Storage for Terraform state
+- GitHub Actions CI/CD workflows
 - OpenID Connect (OIDC) authentication
 - Terraform validation
-- Terraform planning
-- Automated Terraform deployment
+- Terraform integration tests
+- Automated infrastructure deployment
 - Infrastructure drift detection
-- Static Terraform checks
 
 ---
 
-## GitHub Actions Workflow
+## GitHub Actions Workflows
 
-The CI/CD workflow performs the following steps:
-
-1. Checkout repository
-2. Authenticate with Azure using OIDC
-3. Install Terraform
-4. Initialize Terraform
-5. Validate Terraform configuration
-6. Generate Terraform execution plan
-7. Apply infrastructure changes automatically
+| Workflow | Purpose |
+|----------|---------|
+| **infra-static-tests.yml** | Runs Terraform formatting, validation, and static analysis. |
+| **infra-ci-cd.yml** | Executes Terraform plan and deploys infrastructure to Azure. |
+| **infra-drift-detection.yml** | Detects infrastructure drift between Azure and Terraform configuration. |
 
 ---
 
 ## Azure Resources
 
-The project uses the following Azure resources:
+This project provisions and uses:
 
 - Resource Group
-- Storage Account
+- Azure Storage Account
 - Blob Container
 - Microsoft Entra ID Application
-- Federated Credential
+- Federated Credentials
 - Role Assignments
 
 ---
 
 ## Security
 
-Authentication is implemented using GitHub OpenID Connect (OIDC).
+Authentication between GitHub Actions and Azure is implemented using **OpenID Connect (OIDC)**.
 
-No Azure Client Secret is required.
+No client secrets are stored in the repository.
 
-Sensitive information is stored as GitHub Secrets:
+The following GitHub Secrets are configured:
 
 - AZURE_CLIENT_ID
 - AZURE_TENANT_ID
@@ -130,16 +132,21 @@ Sensitive information is stored as GitHub Secrets:
 
 ---
 
-## Learning Objectives
+## Workflow Results
 
-This lab demonstrates:
+### Pull Request Checks
 
-- Infrastructure as Code (IaC)
-- Terraform backend configuration
-- Azure authentication with OIDC
-- GitHub Actions automation
-- Secure cloud deployments
-- CI/CD best practices
+> *(Screenshot will be added after all workflows pass.)*
+
+![PR Checks](screenshots/pr-checks.png)
+
+---
+
+### Terraform Plan
+
+> *(Screenshot will be added after the Terraform deployment succeeds.)*
+
+![Terraform Plan](screenshots/pr-tf-plan.png)
 
 ---
 
@@ -151,6 +158,16 @@ https://github.com/rodr0304/cst8918-w25-lab12
 
 ---
 
+## Course Information
+
+**Course:** CST8918 – DevOps: Infrastructure as Code
+
+**Institution:** Algonquin College
+
+**Professor:** Robert McKenney
+
+---
+
 ## License
 
-This project was developed exclusively for educational purposes as part of the **CST8918 - Cloud Infrastructure Automation** course at **Algonquin College**.
+This repository was created exclusively for educational purposes.
