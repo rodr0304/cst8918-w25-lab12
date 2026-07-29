@@ -1,7 +1,7 @@
 terraform {
   required_version = ">= 1.5.0"
 
-  resource_provider_registrations {
+  required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
       version = "~> 4.0"
@@ -21,7 +21,7 @@ resource "azurerm_resource_group" "backend_rg" {
 
 # Storage Account
 resource "azurerm_storage_account" "backend_storage" {
-  name                = "rodr0304githubactions"
+  name                = "rodr304githubactionsgrp7"
   resource_group_name = azurerm_resource_group.backend_rg.name
   location            = azurerm_resource_group.backend_rg.location
 
