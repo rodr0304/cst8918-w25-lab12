@@ -39,6 +39,8 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
+        env:
+          ARM_ACCESS_KEY: ${{ secrets.ARM_ACCESS_KEY }}
         run: terraform init
 
       - name: Terraform Validate
