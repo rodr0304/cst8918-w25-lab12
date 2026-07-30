@@ -161,6 +161,12 @@ Drift Detection Issue Details:
 Fix Drift Detection Issue:
 ![alt text](<./Screenshots/Screenshot 2026-07-29 212407.png>)
 
+Pull Request Checks:
+![Pull Request Checks](Screenshots/pr-checks.png)
+
+Terraform Plan:
+![Terraform Plan](Screenshots/pr-tf-plan.png)
+
 ---
 
 ## Repository
