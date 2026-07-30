@@ -105,7 +105,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: tfplan
-        path: tfplan
+        path: ./infra/tf-app/tfplan
         
     # Create string output of Terraform Plan
     - name: Create String Output
@@ -163,6 +163,8 @@ jobs:
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_wrapper: false
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
@@ -173,6 +175,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: tfplan
+        path: ./infra/tf-app
 
     # Terraform Apply
     - name: Terraform Apply
