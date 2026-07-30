@@ -109,7 +109,8 @@ No client secrets are stored in the repository.
 
 The following GitHub Secrets are configured:
 
-- AZURE_CLIENT_ID
+- AZURE_CLIENT_ID_READ
+- AZURE_CLIENT_ID_WRITE
 - AZURE_TENANT_ID
 - AZURE_SUBSCRIPTION_ID
 - ARM_ACCESS_KEY
