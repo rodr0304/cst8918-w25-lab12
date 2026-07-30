@@ -136,7 +136,7 @@ App Registration:
 ![alt text](<./Screenshots/Screenshot 2026-07-29 195107.png>)
 
 Actions Secret Configuration:
-![alt text](<./Screenshots/Screenshot 2026-07-29 204813.png>)
+![alt text](<./Screenshots/Screenshot 2026-07-29 212527.png>)
 
 Pull Request Checks: 
 Link: https://github.com/rodr0304/cst8918-w25-lab12/pull/10
@@ -157,6 +157,9 @@ Drift Detection Issue:
 
 Drift Detection Issue Details:
 ![alt text](<./Screenshots/Screenshot 2026-07-29 203647.png>)
+
+Fix Drift Detection Issue:
+![alt text](<./Screenshots/Screenshot 2026-07-29 212407.png>)
 
 ---
 
