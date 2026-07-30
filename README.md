@@ -37,22 +37,6 @@ The project includes automated Terraform validation, integration testing, infras
 │       ├── infra-drift-detection.yml
 │       └── infra-static-tests.yml
 │
-├── app
-│   └── .gitkeep
-│
-├── docs
-│   ├── 1-github-settings.md
-│   ├── 2-terraform-backend.md
-│   ├── 3-azure-credentials.md
-│   ├── 4-github-secrets.md
-│   ├── 5-use-oidc.md
-│   ├── 6.0-github-actions.md
-│   ├── 6.1-terraform-static-tests.md
-│   ├── 6.2-terraform-integration.md
-│   ├── 6.3-terraform-deploy.md
-│   ├── 6.4-terraform-drift.md
-│   └── 7-add-infra-elements.md
-│
 ├── infra
 │   ├── az-federated-credential-params
 │   │   ├── branch-main.json
@@ -132,37 +116,46 @@ The following GitHub Secrets are configured:
 
 ---
 
+## Branch
+main 
+infra-elements - for development purpose
+
 ## Workflow Results
 
-### Pull Request Checks
-
-> *(Screenshot will be added after all workflows pass.)*
-
-![PR Checks](screenshots/pr-checks.png)
-
----
-
-### Terraform Plan
-
-> *(Screenshot will be added after the Terraform deployment succeeds.)*
-
-![Terraform Plan](screenshots/pr-tf-plan.png)
-
-Testing GitHub Actions.
-
-
+Resource Group:
 ![alt text](<./Screenshots/Screenshot 2026-07-29 194817.png>)
+
+Blob Container:
 ![alt text](<./Screenshots/Screenshot 2026-07-29 194900.png>)
+
+Terraform state file:
 ![alt text](<./Screenshots/Screenshot 2026-07-29 194908.png>)
 
+App Registration:
 ![alt text](<./Screenshots/Screenshot 2026-07-29 195107.png>)
+
+Actions Secret Configuration:
+![alt text](<./Screenshots/Screenshot 2026-07-29 204813.png>)
+
+Pull Request Checks: 
+Link: https://github.com/rodr0304/cst8918-w25-lab12/pull/10
 
 ![alt text](<./Screenshots/Screenshot 2026-07-29 195436.png>)
 
+Add message on Pull Request:
 ![alt text](<./Screenshots/Screenshot 2026-07-29 195501.png>)
-https://github.com/rodr0304/cst8918-w25-lab12/pull/10
 
+VNet and Subnet:
 ![alt text](<./Screenshots/Screenshot 2026-07-29 195729.png>)
+
+Drift Detection Checks Failed after removing subnet from azure portal:
+![alt text](<./Screenshots/Screenshot 2026-07-29 203631.png>)
+
+Drift Detection Issue:
+![alt text](<./Screenshots/Screenshot 2026-07-29 203606.png>)
+
+Drift Detection Issue Details:
+![alt text](<./Screenshots/Screenshot 2026-07-29 203647.png>)
 
 ---
 
